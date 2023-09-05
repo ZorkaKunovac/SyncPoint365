@@ -1,0 +1,39 @@
+﻿@using SyncPoint365.Web.ViewModels;
+@model CountriesIndexViewModel
+
+    <form class="form-inline" asp-controller="Countries" asp-action="Index" method="POST">
+    <div class="input-group mb-3">
+        <input asp-for="Search" type="text" class="form-control" placeholder="Search">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var country in Model.Countries)
+        {
+            <tr>
+                <td>@country.Name</td>
+                <td>
+                    <a class="btn btn-info"
+                   asp-controller="Countries"
+                   asp-action="Edit"
+                   asp-route-id="@country.Id">Edit</a>
+
+                    <a class="btn btn-danger"
+                   asp-controller="Countries"
+                   asp-action="Delete"
+                   asp-route-id="@country.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
