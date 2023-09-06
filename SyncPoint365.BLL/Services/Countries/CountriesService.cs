@@ -1,4 +1,4 @@
-﻿using LernaWebApp3.Models;
+﻿using SyncPoint365.Models;
 using SyncPoint365.BLL.Models;
 using System;
 using System.Collections.Generic;

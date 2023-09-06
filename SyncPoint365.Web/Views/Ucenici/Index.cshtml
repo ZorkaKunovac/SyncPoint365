@@ -1,0 +1,44 @@
+﻿@using SyncPoint365.ViewModels;
+@model UceniciIndexViewModel
+
+<form class="form-inline" asp-controller="Ucenici" asp-action="Index" method="POST">
+    <div class="input-group mb-3">
+        <input asp-for="Query" type="text" class="form-control" placeholder="Search">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Broj</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ucenici in Model.Ucenici)
+        {
+            <tr>
+                <td>@ucenici.BrojUcenika</td>
+                <td>@ucenici.Ime</td>
+                <td>@ucenici.Prezime</td>
+
+                <td>
+                    <a class="btn btn-info"
+                   asp-controller="Ucenici"
+                   asp-action="Uredi"
+                   asp-route-id="@ucenici.Id">Uredi</a>
+
+                    <a class="btn btn-danger"
+                   asp-controller="Ucenici"
+                   asp-action="Obrisi"
+                   asp-route-id="@ucenici.Id">Obrisi</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

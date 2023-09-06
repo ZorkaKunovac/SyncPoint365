@@ -1,4 +1,5 @@
 using SyncPoint365.BLL.Services.Countries;
+using SyncPoint365.BLL.Services.Ucenici;
 
 namespace SyncPoint365.Web
 {
@@ -11,8 +12,10 @@ namespace SyncPoint365.Web
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ICountriesService, CountriesService>();
+            builder.Services.AddScoped<IUceniciService, UceniciService>();
 
             var app = builder.Build();
+           
 
 
             // Configure the HTTP request pipeline.

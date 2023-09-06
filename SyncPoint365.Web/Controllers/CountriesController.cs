@@ -1,9 +1,7 @@
-﻿using LernaWebApp3.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SyncPoint365.BLL.Models;
 using SyncPoint365.BLL.Services.Countries;
 using SyncPoint365.Web.ViewModels;
-using System.Diagnostics.Metrics;
 
 namespace SyncPoint365.Web.Controllers
 {
@@ -18,7 +16,7 @@ namespace SyncPoint365.Web.Controllers
             var vm = new CountriesIndexViewModel
             {
                 Countries = _countriesService.GetCountries()
-        };
+            };
 
             return View(vm);
         }
