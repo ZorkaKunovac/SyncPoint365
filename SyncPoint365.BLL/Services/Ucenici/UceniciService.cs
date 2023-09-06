@@ -2,6 +2,7 @@
 using SyncPoint365.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,8 @@ namespace SyncPoint365.BLL.Services.Ucenici
 
         public Ucenik GetByID(int id)
         {
-            throw new NotImplementedException();
+            var ucenik = Data.Ucenici.Find(u => u.Id == id);
+            return ucenik;
         }
         public void DodajUcenika(Ucenik ucenik)
         {
@@ -28,7 +30,12 @@ namespace SyncPoint365.BLL.Services.Ucenici
 
         public void UrediUcenika(int id, Ucenik ucenik)
         {
-            throw new NotImplementedException();
+            var index = Data.Ucenici.FindIndex(u => u.Id == ucenik.Id);
+            Data.Ucenici[index] = ucenik;
+        }
+        public void IzbrisiUcenika(int id)
+        {
+            Data.Ucenici.RemoveAll(u => u.Id == id);
         }
     }
 }

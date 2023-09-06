@@ -13,5 +13,7 @@ namespace SyncPoint365.BLL.Services.Ucenici
         Ucenik GetByID(int id);
         void DodajUcenika(Ucenik ucenik);
         void UrediUcenika(int id, Ucenik ucenik);
+        void IzbrisiUcenika(int id);
+
     }
 }

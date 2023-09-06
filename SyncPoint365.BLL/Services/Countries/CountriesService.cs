@@ -38,7 +38,6 @@ namespace SyncPoint365.BLL.Services.Countries
         public void Delete(int id)
         {
             Data.Countries.RemoveAll(d => d.Id == id);
-
         }
     }
 }

@@ -46,8 +46,33 @@ namespace SyncPoint365.Models
 
         public static List<Ucenik> GetUcenici()
         {
-
             return Ucenici;
+        }
+
+        public static List<UcenikOcjena> Ocjene = new List<UcenikOcjena> {
+            new UcenikOcjena {
+                Id = 1,
+                UcenikId=1,
+                Predmet="Programiranje 1",
+                Ocjena=7
+                },
+             new UcenikOcjena {
+                Id = 2,
+                UcenikId=1,
+                Predmet="Programiranje 2",
+                Ocjena=9
+                },
+               new UcenikOcjena {
+                Id = 3,
+                UcenikId=1,
+                Predmet="Programiranje 3",
+                Ocjena=6
+                },
+        };
+
+        public static List<UcenikOcjena> GetOcjene()
+        {
+            return Ocjene;
         }
     }
 }

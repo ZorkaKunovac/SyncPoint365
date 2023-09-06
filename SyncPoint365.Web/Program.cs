@@ -1,4 +1,5 @@
 using SyncPoint365.BLL.Services.Countries;
+using SyncPoint365.BLL.Services.Ocjene;
 using SyncPoint365.BLL.Services.Ucenici;
 
 namespace SyncPoint365.Web
@@ -13,6 +14,8 @@ namespace SyncPoint365.Web
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ICountriesService, CountriesService>();
             builder.Services.AddScoped<IUceniciService, UceniciService>();
+            builder.Services.AddScoped<IOcjeneService, OcjeneService>();
+
 
             var app = builder.Build();
            

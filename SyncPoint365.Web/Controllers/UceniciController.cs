@@ -56,7 +56,7 @@ namespace BLLVjezba.Controllers
 
         public IActionResult Uredi(int id)
         {
-            var ucenik = Data.Ucenici.Find(u => u.Id == id);
+            var ucenik = _UceniciService.GetByID(id);
 
             return View(ucenik);
         }
@@ -64,14 +64,13 @@ namespace BLLVjezba.Controllers
         [HttpPost]
         public IActionResult Uredi(Ucenik editucenik)
         {
-            var index = Data.Ucenici.FindIndex(c => c.Id == editucenik.Id);
-            Data.Ucenici[index] = editucenik;
+            _UceniciService.UrediUcenika(editucenik.Id, editucenik);
 
             return RedirectToAction("Index");
         }
         public IActionResult Obrisi(int id)
         {
-            Data.Ucenici.RemoveAll(u => u.Id == id);
+            _UceniciService.IzbrisiUcenika(id);
 
             return RedirectToAction("Index");
         }

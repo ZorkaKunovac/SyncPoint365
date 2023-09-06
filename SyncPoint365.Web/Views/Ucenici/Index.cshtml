@@ -1,6 +1,11 @@
 ﻿@using SyncPoint365.ViewModels;
 @model UceniciIndexViewModel
 
+<a class="btn btn-primary" asp-controller="Ucenici" asp-action="Dodaj" >Dodaj</a>
+<br />
+<br />
+
+
 <form class="form-inline" asp-controller="Ucenici" asp-action="Index" method="POST">
     <div class="input-group mb-3">
         <input asp-for="Query" type="text" class="form-control" placeholder="Search">
@@ -32,6 +37,9 @@
                    asp-controller="Ucenici"
                    asp-action="Uredi"
                    asp-route-id="@ucenici.Id">Uredi</a>
+                   
+                    <a class="btn btn-info" asp-controller="Ocjene" asp-action="Index"
+                   asp-route-ucenikid="@ucenici.Id">Ocjene</a>
 
                     <a class="btn btn-danger"
                    asp-controller="Ucenici"

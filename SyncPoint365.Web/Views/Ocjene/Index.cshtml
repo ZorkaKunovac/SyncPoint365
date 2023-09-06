@@ -1,0 +1,29 @@
+﻿@using SyncPoint365.Web.ViewModels;
+@model UcenikOcjenaIndexViewModel;
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Predmet</th>
+            <th>Ocjena</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ocjene in Model.ocjene)
+        {
+                <tr>
+                    <td>@ocjene.Predmet</td>
+                    <td>@ocjene.Ocjena</td>
+
+                    <td>
+                        <a class="btn btn-danger"
+                   asp-controller="Ocjene"
+                   asp-action="Obrisi"
+                   asp-route-id="@ocjene.Id"
+                   asp-route-ucenikId="@ocjene.UcenikId">Obrisi</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
